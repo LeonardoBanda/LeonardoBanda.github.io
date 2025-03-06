@@ -44,8 +44,10 @@ $(function () {
     createCollectable(type.kennedi, 1250, 300, 6, 0.7);
 
     // TODO 4 - Create Cannons
-      
 
+    createCannon("left", 300, 5000);
+    createCannon("top", 650, 2000);
+    createCannon("top", 425, 2000);
 
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
