@@ -39,20 +39,20 @@ $(function () {
     createPlatform(1200, 350, 150, 10);
 
     // TODO 3 - Create Collectables
-    createCollectable(type.db, 325, 625, 6, 0.7);
-    createCollectable(type.steve, 750, 450, 6, 0.7);
-    createCollectable(type.kennedi, 1250, 300, 6, 0.7);
-
+    createCollectable("db", 325, 625);
+    createCollectable("steve", 750, 450);
+    createCollectable("kennedi", 1250, 300);
     // TODO 4 - Create Cannons
 
     createCannon("left", 300, 5000);
     createCannon("top", 650, 2000);
     createCannon("top", 425, 2000);
 
+
     //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////
-  }
+  } 
 
   registerSetup(setup);
 });
