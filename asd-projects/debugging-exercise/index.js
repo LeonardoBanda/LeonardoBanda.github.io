@@ -102,7 +102,7 @@ function addNewGhostElement(ghost, id) {
 //////////////////
 
 // this should move all of the ghosts
-function (update) {
+function update() {
   // loop over the ghosts array. We use the maxGhosts variable instead of ghosts.length
   // to make seeing issues in the debugger slightly easier (in practice, you should use
   // ghosts.length, but do NOT change it here)
