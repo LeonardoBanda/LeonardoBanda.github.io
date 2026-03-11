@@ -74,6 +74,9 @@ function update() {
   if (hasHitWall() || hasCollidedWithSnake()) {
     endGame();
   }
+  if (hasCollidedWithApple()) {
+    handleAppleCollision();
+  }
 }
 
 function checkForNewDirection(event) {
@@ -314,7 +317,7 @@ function getRandomAvailablePosition() {
       not occupied by a snakeSquare in the snake's body. If it is then set 
       spaceIsAvailable to false so that a new position is generated.
     */
-    for (k = 0; k < snake.body.length; k++) {
+    for (var k = 0; k < snake.body.length; k++) {
       if (
         randomPosition.column === snake.body[k].column &&
         randomPosition.row === snake.body[k].row
