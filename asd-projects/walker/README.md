@@ -120,7 +120,6 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Update the HTML ID**
-
    - Open `index.html`.
    - Find the line that creates the game box:
      ```html
@@ -182,7 +181,6 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Find the Setup Code**
-
    - 🔍 Open `index.js`.
    - Locate the **SETUP** section where jQuery is used to listen for events with this pattern:
      ```js
@@ -190,16 +188,13 @@ There are two ways to open your project with **Live Server**:
      ```
 
 2. **Update the Event Type**
-
    - Replace the event type with `"keydown"` so that it listens for key presses.
 
 3. **Update the Handler Function Name**
-
    - Replace `handleEvent` with a new function name: `handleKeyDown`.
    - This is the function that will run when a key is pressed.
 
 4. **Rename the Function**
-
    - Find the existing `handleEvent` function definition in the **CORE LOGIC** section.
    - Change the function name to `handleKeyDown`.
 
@@ -252,7 +247,6 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Create a `KEY` Object**
-
    - 🔍 In the **SETUP** section of `index.js`, create a constant called `KEY` that maps key names (like `LEFT`, `UP`, `RIGHT`, `DOWN`) to their numeric key codes.
    - We'll give you the code for the **Enter** key, but you'll need to figure out the others on your own:
      ```js
@@ -267,7 +261,6 @@ There are two ways to open your project with **Live Server**:
    - 💡 Use the console from the last TODO or visit [keycode.info](https://keycode.info) to identify the correct values.
 
 2. **Update `handleKeyDown`**
-
    - Inside the `handleKeyDown` function, write a series of `if` statements that respond to each arrow key.
    - Example:
      ```js
@@ -327,12 +320,10 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Create a Global `walker` Variable**
-
    - 🔍 Scroll to the **SETUP** section in `index.js`.
    - Declare a variable named `walker`.
 
 2. **Assign an Object to `walker`**
-
    - The `walker` variable should store an object.
    - This object will represent the current state of your game character and should include the following properties:
      - `x` — horizontal position (left/right)
@@ -407,12 +398,10 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Define the Function**
-
    - 🔍 Scroll to the **HELPER FUNCTIONS** section in `index.js`.
    - Create a function called `repositionGameItem()`.
 
 2. **Update the Walker’s `x` and `y` Properties**
-
    - Inside your function, add the horizontal speed to the x-position.
    - Then add the vertical speed to the y-position.
    - Be sure to use **dot notation** to update both values within the `walker` object.
@@ -486,11 +475,9 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Define the `redrawGameItem()` Function**
-
    - 🔍 In the **HELPER FUNCTIONS** section of `index.js`, create a new function named `redrawGameItem()`.
 
 2. **Use jQuery to Draw the Walker**
-
    - Inside your function, use jQuery’s `.css()` method to update the position of the walker element:
      - Use the `"left"` CSS property to set the horizontal (x) position.
      - Use the `"top"` CSS property to set the vertical (y) position.
@@ -544,11 +531,9 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Edit the `handleKeyDown` Function**
-
    - 🔍 Scroll to your `handleKeyDown` function in the CORE LOGIC section of `index.js`.
 
 2. **Set Speed for Arrow Keys**
-
    - Use `if` statements to check which arrow key was pressed.
    - When the LEFT arrow is pressed, update `walker.speedX` to `-5` to move left.
    - 🔄 Use your understanding from Bouncing Box and earlier TODOs to handle the other three arrow keys yourself.
@@ -601,7 +586,6 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Register a New Event Listener**
-
    - 🔍 Scroll to the SETUP section of your code.
    - Add another line to register a second key event — this one should listen for `"keyup"` events.
    - Just like `"keydown"`, you’ll need to write:
@@ -610,7 +594,6 @@ There are two ways to open your project with **Live Server**:
    - ✅ Make sure this line matches the structure of your existing `"keydown"` registration — but don’t reuse the same handler function!
 
 2. **Create the `handleKeyUp()` Function**
-
    - 🔍 Add a new function below `handleKeyDown()` and name it `handleKeyUp`.
    - Make sure to include the `event` parameter in the function definition.
    - Inside the function:
@@ -663,11 +646,9 @@ There are two ways to open your project with **Live Server**:
 ### Step-by-Step Instructions
 
 1. **Create a Helper Function**
-
    - 🔍 In the HELPER FUNCTIONS section, create a function named `wallCollision()`.
 
 2. **Write Boundary Conditions**
-
    - Inside the `wallCollision()` function:
      - Use `if` statements to check if the `walker` object is moving the object beyond the game board edges.
      - Recall that the walker’s `x` and `y` properties represent its position on the screen.
