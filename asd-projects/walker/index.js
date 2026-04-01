@@ -62,19 +62,19 @@ function runProgram() {
     console.log(event.which);
     if (event.which === KEY.LEFT) {
       console.log("left pressed");
-      walker.speedX -= 5;
+      walker.speedX = -5;
     }
     if (event.which === KEY.RIGHT) {
       console.log("right pressed");
-      walker.speedX += 5;
+      walker.speedX = 5;
     }
     if (event.which === KEY.UP) {
       console.log("up pressed");
-      walker.speedY -= 5;
+      walker.speedY = -5;
     }
     if (event.which === KEY.DOWN) {
       console.log("down pressed");
-      walker.speedY += 5;
+      walker.speedY = 5;
     }
   }
   function handleKeyUp(event) {
@@ -106,10 +106,10 @@ function runProgram() {
     $("#walker").css("top", walker.y);
   }
   function wallCollision() {
-    if (walker.x < 0 || walker.x > $("board").width()) {
+    if (walker.x < 0 || walker.x > $("#board").width()) {
       walker.x -= walker.speedX;
     }
-    if (walker.y < 0 || walker.y > $("board").height()) {
+    if (walker.y < 0 || walker.y > $("#board").height()) {
       walker.y -= walker.speedY;
     }
   }
