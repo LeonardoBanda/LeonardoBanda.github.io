@@ -78,10 +78,10 @@ function runProgram() {
     }
   }
   function handleKeyUp(event) {
-    if (event.which === KEY_LEFT || event.which === KEY_RIGHT) {
+    if (event.which === KEY.LEFT || event.which === KEY.RIGHT) {
       walker.speedX = 0;
     }
-    if (event.which === KEY_DOWN || event.which === KEY_UP) {
+    if (event.which === KEY.DOWN || event.which === KEY.UP) {
       walker.speedY = 0;
     }
   }
