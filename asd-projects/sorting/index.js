@@ -15,8 +15,8 @@ The CSS ids you will work with are:
  
 // TODO 2: Implement bubbleSort
 async function bubbleSort(array) {
-  for (var i = 0; (i = array.length - 1); i++) {
-    for (var j = array.length - 1; (j = i + 1); j--) {
+  for (var i = 0; (i < array.length); i++) {
+    for (var j = array.length - 1; (j <= i); j--) {
       if (array[j].value < array[j - 1].value) {
         swap(array[j], array[j - 1]);
         updateCounter(bubbleCounter);
@@ -31,14 +31,14 @@ async function quickSort(array, left, right)
 {
   if ((right - left ) > 0)
   {
-    var index = await partition(array, left, right) 
+    var index = await partition(array, left, right); 
     if (left < (index - 1))
     {
-    await quickSort(array, left, index - 1)
+    await quickSort(array, left, index - 1);
     }
     if (index < right)
     {
-    await quickSort(array, index, right)
+    await quickSort(array, index, right);
     }
   }
   else
@@ -58,7 +58,7 @@ async function partition(array, left, right)
 
     if (left < right)
     {
-      swap(array,left,right)
+      swap(array,left,right);
       updateCounter(quickCounter);
       await sleep();
     }
@@ -69,8 +69,8 @@ async function partition(array, left, right)
 
 function swap(array, i, j) {
   var temp = array[i];
-
-  array[i] = array[j];
+  var temp2 = array[j];
+  array[i] = temp2;
   array[j] = temp;
 }
 
