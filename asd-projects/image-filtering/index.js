@@ -36,15 +36,17 @@ function applyAndRender() {
 // TODO 1, 2, 3 & 5: Create the applyFilter function here
 function applyFilter(filterFunction) {
   for (var i = 0; i < image.length; i++) {
-    for (var j = 0; j < image[i].length; j++) {
-      pixel = image[i][j];
+    var row = image[i];
+    for (var j = 0; j < row.length; j++) {
+      pixel = row[j];
       pixelArray = rgbStringToArray(pixel);
       //TODOO COLOR MOD
       filterFunction(pixelArray);
       //pixelArray[RED] = 200;
-
-      updatedPixel = rgbArrayToString(pixelArray);
-      image[i][j] = updatedPixel;
+      pixel = rgbArrayToString(pixelArray);
+      row[j] = pixel;
+      //updatedPixel = rgbArrayToString(pixelArray);
+      //image[i][j] = updatedPixel;
     }
   }
 }
@@ -53,25 +55,26 @@ function applyFilter(filterFunction) {
 function applyFilterNoBackground(filterFunction) {
   var backgroundColor = image[0][0];
   for (var k = 0; k < image.length; k++) {
-    for (var l = 0; l < image[i].length; l++) {
-      if (image[k][l] !== backgroundColor) {
-        pixelArr = rgbStringToArray(pixel);
-        filterFunction(pixelArr);
-        updatedPixelArr = rgbArrayToString(pixelArr);
-
-        image[k][l] = updatedPixelArr;
+    var row = image[k];
+    for (var l = 0; l < row.length; l++) {
+      var pixel = row[l];
+      if (pixel !== backgroundColor) {
+        var pixelArray = rgbStringToArray(pixel);
+        filterFunction(pixelArray);
+        pixel = rgbArrayToString(pixelArray);
+        row[l] = pixel;
       }
     }
   }
 }
 // TODO 6: Create the keepInBounds function
-function keepInBounds(numm) {
-  if (numb < 0) {
+function keepInBounds(num) {
+  if (num < 0) {
     return 0;
-  } else if (numb > 255) {
+  } else if (num > 255) {
     return 255;
   } else {
-    return numb;
+    return num;
   }
 }
 
@@ -82,12 +85,10 @@ function reddify(array) {
 }
 
 // TODO 7 & 8: Create more filter functions
-function decreaseBlue(arrayy) {
-  arrayy[BLUE] -= 50;
-  arrayy[BLUE] = keepInBounds(arrayy[BLUE]);
+function decreaseBlue(array) {
+  array[BLUE] = keepInBounds(array[BLUE] - 50);
 }
-function increaseGreenByBlue(arrayyy) {
-  arrayyy[GREEN] += arrayyy[BLUE];
-  arrayyy[GREEN] = keepInBounds(arrayyy[GREEN]);
+function increaseGreenByBlue(array) {
+  array[GREEN] = keepInBounds(array[GREEN] + array[BLUE]);
 }
 // CHALLENGE code goes below here
